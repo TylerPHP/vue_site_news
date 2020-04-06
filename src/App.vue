@@ -1,28 +1,58 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <NavBar :search="search"/>
+        <NewsArea :data="data"/>
+        <SmallNews :data="data"/>
+        <Footer/>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    // eslint-disable-next-line no-unused-vars
+    import NavBar from "./components/NewsApp/NavBar";
+    import NewsArea from "./components/NewsApp/NewsArea";
+    import SmallNews from "./components/NewsApp/SmallNews";
+    import Footer from "./components/NewsApp/Footer"
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'App',
+        components: {
+            NavBar,
+            NewsArea,
+            SmallNews,
+            Footer,
+        },
+        data() {
+            return {
+                search: '',
+                dataNews: '',
+                data: [
+                    {
+                        'id': 0,
+                        'head': 'Путин снова путин',
+                        'article': 'bind by the terms of a contract, as one of apprenticeship.\n' +
+                            'He was an articled pupil of Herbind by the terms of a contract, as one of apprenticeship.\n' +
+                            'He was an articled pupil of Herbert Brewer at Gloucester Cathedral before gaining an opebind by the terms of a contract, as one of apprenticeship.\n' +
+                            'He was an articled pupil of Herbert Brewer at Gloucester Cathedral before gaining an opebert Brewer at Gloucester Cathedral before gaining an open scholarship in composition to study with Stanford at the RCM in 1911.',
+
+                    },  {
+                        'id': 1,
+                        'head': 'Путин снова путин',
+                        'article': 'bind by the terms of a contract, as one of apprenticeship.\n' +
+                            'He was an articled pupil of Herbind by the terms of a contract, as one of apprenticeship.\n' +
+                            'He was an articled pupil of Herbert Brewer at Gloucester Cathedral before gaining an opebind by the terms of a contract, as one of apprenticeship.\n' +
+                            'He was an articled pupil of Herbert Brewer at Gloucester Cathedral before gaining an opebert Brewer at Gloucester Cathedral before gaining an open scholarship in composition to study with Stanford at the RCM in 1911.',
+
+                    },
+
+                ],
+            }
+        },
+        methods: {}
+    }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
+
